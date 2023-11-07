@@ -1,0 +1,15 @@
+.row {
+  display: flex;
+}
+
+.left, .right {
+  border: 1px solid red;
+  width: 25%;
+  padding: 1rem;
+}
+
+.middle {
+  border: 1px solid yellow;
+  width: 50%;
+  padding: 1rem;
+}
