@@ -1,8 +1,0 @@
-CREATE TABLE IF NOT EXISTS publications(
-    id INTEGER NOT NULL AUTO_INCREMENT,
-    description TEXT NOT NULL,
-    user_id INTEGER NOT NULL,
-    created_at TIMESTAMP NOT NULL,
-    PRIMARY KEY(id)
-) DEFAULT CHARSET = latin1;
-
