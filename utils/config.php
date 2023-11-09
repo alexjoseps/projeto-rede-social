@@ -5,10 +5,8 @@ define('HOST', 'localhost');
 define('DATABASE', 'social_network');
 
 try {
-    $connection = new mysqli(HOST, USER, PASSWORD);
-    $database_sql = 'CREATE DATABASE IF NOT EXISTS social_network;';
-    $connection->query($database_sql);
-    $connection->close();
+    // $conn = new mysqli(HOST, USER, PASSWORD);
+    // $conn->query('CREATE DATABASE IF NOT EXISTS social_network;');
 
     $connection = new PDO("mysql:host=" . HOST . ";dbname=" . DATABASE, USER, PASSWORD);
 
