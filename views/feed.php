@@ -126,7 +126,25 @@ if (!isset($_SESSION['user_id'])) {
   <div class="row">
     <div class="column left">
       <div class="profile">
+        <?php
+        $query = $connection->prepare("SELECT * FROM users WHERE id = :user_id");
+        $query->bindParam("user_id", $_SESSION['user_id'], PDO::PARAM_INT);
+        $query->execute();
+        $current_user = $query->fetch(PDO::FETCH_ASSOC);
 
+        $query = $connection->prepare("SELECT COUNT(*) AS total FROM friendships WHERE requestor_id = :user_id OR requestee_id = :user_id");
+        $query->bindParam("user_id", $_SESSION['user_id'], PDO::PARAM_INT);
+        $query->execute();
+        $friendships = $query->fetch(PDO::FETCH_ASSOC);
+        ?>
+
+        <h2>
+          <?php echo $current_user['name'] ?>
+        </h2>
+
+        <h3>
+          <?php echo $friendships['total'] ?> amizades
+        </h3>
       </div>
     </div>
 
