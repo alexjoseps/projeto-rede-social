@@ -194,7 +194,22 @@ if (!isset($_SESSION['user_id'])) {
       </div>
     </div>
 
-    <div class="column right"></div>
+    <div class="column right">
+      <h2>Sugestões de amizades</h2>
+
+      <?php
+      $query = $connection->prepare("SELECT * FROM users WHERE users.id <> :current_user_id AND NOT EXISTS(SELECT 1 FROM friendships WHERE (requestor_id = users.id AND requestee_id = :current_user_id) OR (requestor_id = :current_user_id AND requestee_id = users.id))");
+      $query->bindParam("current_user_id", $_SESSION['user_id'], PDO::PARAM_INT);
+      $query->execute();
+      $friendships = $query->fetchAll(PDO::FETCH_ASSOC);
+      shuffle($friendships);
+
+      foreach ($friendships as $friendship) { ?>
+        <h2>
+          <?php echo $friendship["name"] ?>
+        </h2>
+      <?php } ?>
+    </div>
   </div>
 </body>
 
