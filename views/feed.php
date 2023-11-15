@@ -142,18 +142,37 @@ if (!isset($_SESSION['user_id'])) {
       </div>
 
       <div class=post-list>
+        <?php
+        $query = $connection->prepare("SELECT * FROM publications");
+        $query->execute();
+        $publications = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        <h2>
+        foreach ($publications as $publication) { ?>
+          <h2>
+            <?php echo $publication["description"] ?>
+          </h2>
 
-        </h2>
-        <form method="post" action="../scripts/create_comment.php">
-          <div>
-            <input type="text" name="comment" placeholder="Comente algo" required />
-            <input type="hidden" name="publication_id" value="<?php $publication["id"] ?>" />
-          </div>
+          <?php
+          $publication_id = $publication['id'];
+          $query = $connection->prepare("SELECT * FROM comments WHERE publication_id = $publication_id");
+          $query->execute();
+          $comments = $query->fetchAll(PDO::FETCH_ASSOC);
 
-          <button type="submit" name="create-comment" value="create-comment">Comentar</button>
-        </form>
+          foreach ($comments as $comment) { ?>
+            <h3>
+              <?php echo $comment["comment"] ?>
+            </h3>
+          <?php } ?>
+
+          <form method="post" action="../scripts/create_comment.php">
+            <div>
+              <input type="text" name="comment" placeholder="Comente algo" required />
+              <input type="hidden" name="publication_id" value="<?php echo $publication["id"] ?>" />
+            </div>
+
+            <button type="submit" name="create-comment" value="create-comment">Comentar</button>
+          </form>
+        <?php } ?>
       </div>
     </div>
 

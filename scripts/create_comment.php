@@ -3,7 +3,7 @@
   include('../utils/config.php');
 
   if (isset($_POST['create-comment'])) {
-    $description = $_POST['comment'];
+    $comment = $_POST['comment'];
     $publication_id = $_POST['publication_id'];
     $user_id = $_SESSION['user_id'];
     date_default_timezone_set("America/Sao_Paulo");
