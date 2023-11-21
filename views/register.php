@@ -34,7 +34,7 @@ if (isset($_POST['register'])) {
         $result = $query->fetch(PDO::FETCH_ASSOC);
         $_SESSION['user_id'] = $result['id'];
 
-        header('Location: ../index.php');
+        header('Location: feed.php');
       } else {
         echo '<p class="error">Não foi possível registar seu usuário</p>';
       }
@@ -52,6 +52,17 @@ if (isset($_POST['register'])) {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+    }
+
+    #header-bar {
+      background-color: #0077b5;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #logo-container {
+      margin-bottom: 20px;
     }
 
     #register-div {
@@ -116,6 +127,14 @@ if (isset($_POST['register'])) {
 </header>
 
 <body>
+  <div id="header-bar">
+    <div id="logo-container">
+      <!-- Adicione sua logo aqui -->
+      <img src="c:\xampp\htdocs\AV2\logo.png" alt="Logo SendMe" style="max-width: 100px;">
+    </div>
+    <h1>SendMe</h1>
+  </div>
+
   <div id="register-div">
     <h1>Registro</h1>
     <form method="post" action="">
@@ -136,7 +155,7 @@ if (isset($_POST['register'])) {
         <input type="password" name="password_confirmation" placeholder="Confirme sua senha" required />
       </div>
 
-      <button onclick="window.location.href = '../index.php'">Voltar</button>
+      <button onclick="window.location.href = 'login.php'">Acessar rede</button>
       <button type="submit" name="register" value="register">Cadastrar</button>
     </form>
   </div>

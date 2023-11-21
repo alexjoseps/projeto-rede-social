@@ -18,14 +18,13 @@ if (isset($_POST['login'])) {
 
     if (password_verify($password, $result['password'])) {
       $_SESSION['user_id'] = $result['id'];
-      header('Location: ../index.php');
+      header('Location: feed.php');
     } else {
       echo "<p class='error'>Usuário ou senha inválidos</p>";
     }
   }
 }
 ?>
-
 <html>
 <header>
   <title>Rede Social</title>
@@ -35,6 +34,17 @@ if (isset($_POST['login'])) {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+    }
+
+    #header-bar {
+      background-color: #0077b5;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px;
+    }
+
+    #logo-container {
+      margin-bottom: 20px;
     }
 
     #login-div {
@@ -98,6 +108,14 @@ if (isset($_POST['login'])) {
 </header>
 
 <body>
+  <div id="header-bar">
+    <div id="logo-container">
+      <!-- Adicionar a imagem aqui -->
+      <img src="c:Teste\logo.png" alt="Logo SendMe" style="max-width: 100px;">
+    </div>
+    <h1>SendMe</h1>
+  </div>
+
   <div id="login-div">
     <h1>Acesso</h1>
     <form method="post" action="" name="login-form">
@@ -110,7 +128,7 @@ if (isset($_POST['login'])) {
         <input type="password" name="password" placeholder="Digite sua senha" required />
       </div>
 
-      <button onclick="window.location.href = '../index.php'">Voltar</button>
+      <button onclick="window.location.href = 'register.php'">Criar conta</button>
       <button type="submit" name="login" value="login">Acessar</button>
     </form>
   </div>
