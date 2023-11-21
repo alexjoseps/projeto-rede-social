@@ -109,10 +109,8 @@ if (isset($_POST['login'])) {
 <body>
   <div id="header-bar">
     <div id="logo-container">
-      <!-- Adicionar a imagem aqui -->
-      <img src="c:Teste\logo.png" alt="Logo SendMe" style="max-width: 100px;">
     </div>
-    <h1>SendMe</h1>
+    <h1>Posta Ai</h1>
   </div>
 
   <div id="login-div">

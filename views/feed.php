@@ -13,8 +13,15 @@ if (!isset($_SESSION['user_id'])) {
 
 <head>
   <meta charset="UTF-8">
-  <title>Rede Social</title>
+  <title>Posta Ai</title>
   <style>
+    #header-bar {
+      background-color: #0077b5;
+      color: #ffffff;
+      text-align: center;
+      padding: 10px;
+    }
+
     body {
       background-color: #f3f3f3;
       font-family: Arial, sans-serif;
@@ -118,7 +125,10 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-  <div>
+  <div id="header-bar">
+    <div id="logo-container">
+    </div>
+    <h1>Posta Ai</h1>
     <button onclick="window.location.href = '../scripts/logout.php'">Sair</button>
   </div>
 
@@ -208,12 +218,12 @@ if (!isset($_SESSION['user_id'])) {
           <?php echo $friendship_suggestion["name"] ?>
         </h2>
         <form method="post" action="../scripts/create_friendship.php">
-            <div>
-              <input type="hidden" name="friend_id" value="<?php echo $friendship_suggestion["id"] ?>" />
-            </div>
+          <div>
+            <input type="hidden" name="friend_id" value="<?php echo $friendship_suggestion["id"] ?>" />
+          </div>
 
-            <button type="submit" name="create-friendship" value="create-friendship">Adicionar amigo</button>
-          </form>
+          <button type="submit" name="create-friendship" value="create-friendship">Adicionar amigo</button>
+        </form>
 
       <?php } ?>
     </div>

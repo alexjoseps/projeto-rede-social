@@ -128,10 +128,8 @@ if (isset($_POST['register'])) {
 <body>
   <div id="header-bar">
     <div id="logo-container">
-      <!-- Adicione sua logo aqui -->
-      <img src="c:\xampp\htdocs\AV2\logo.png" alt="Logo SendMe" style="max-width: 100px;">
     </div>
-    <h1>SendMe</h1>
+    <h1>Posta Ai</h1>
   </div>
 
   <div id="register-div">
