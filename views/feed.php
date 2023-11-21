@@ -41,26 +41,29 @@ if (!isset($_SESSION['user_id'])) {
 
     button:hover {
       background-color: #005983;
-      /* Cor mais escura ao passar o mouse */
     }
 
     .row {
       display: flex;
     }
 
-    .column {
+    /* .column {
       flex: 1;
       padding: 20px;
-    }
+    } */
 
     .left {
       background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin-right: 10px;
+      width: 25%;
+      padding: 1rem;
     }
 
     .middle {
+      width: 50%;
+      padding: 1rem;
       background-color: #ffffff;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -72,6 +75,8 @@ if (!isset($_SESSION['user_id'])) {
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin-left: 10px;
+      width: 25%;
+      padding: 1rem;
     }
 
     .profile {
@@ -99,7 +104,7 @@ if (!isset($_SESSION['user_id'])) {
       margin-top: 10px;
     }
 
-    .post-list input {
+    input {
       width: 100%;
       padding: 8px;
       border: 1px solid #ccc;
