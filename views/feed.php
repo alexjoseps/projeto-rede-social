@@ -70,7 +70,7 @@ if (!isset($_SESSION['user_id'])) {
     .profile {
       height: 200px;
       width: 200px;
-      background-color: #dcdcdc;
+      /* background-color: #dcdcdc; */
       /* Cor de fundo temporária para o perfil */
       border-radius: 50%;
       margin: 20px auto;
@@ -115,7 +115,6 @@ if (!isset($_SESSION['user_id'])) {
       background-color: #005983;
     }
   </style>
-  <link rel="stylesheet" href="../css/rede-social.css">
 </head>
 
 <body>

@@ -123,7 +123,6 @@ if (isset($_POST['register'])) {
       background-color: #bfbfbf;
     }
   </style>
-  <link rel="stylesheet" href="../css/register.css">
 </header>
 
 <body>

@@ -104,7 +104,6 @@ if (isset($_POST['login'])) {
       background-color: #bfbfbf;
     }
   </style>
-  <link rel="stylesheet" href="../css/login.css">
 </header>
 
 <body>
