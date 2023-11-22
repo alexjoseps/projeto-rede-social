@@ -3,7 +3,6 @@
   include('../utils/config.php');
 
   if (isset($_POST['create-post'])) {
-    echo("CHEGOU AQUI");
     $description = $_POST['post-description'];
     $user_id = $_SESSION['user_id'];
     date_default_timezone_set("America/Sao_Paulo");
